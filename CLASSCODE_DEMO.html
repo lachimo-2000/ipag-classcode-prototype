@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#142e39"><meta name="description" content="Prototype quy trình cấp mã lớp và quản lý danh mục đào tạo IPA Group."><title>Classcode · IPA Group</title><link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxNjNiNDUiLz48cGF0aCBkPSJNMjMgMTkgMTEgMzJsMTIgMTNtMTgtMjYgMTIgMTMtMTIgMTNNMzYgMTUgMjggNDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JjZjJkMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K" type="image/svg+xml"><style>:root{--ink:#182f3b;--muted:#6e7e87;--accent:#216c60;--line:#e3e9e9;--paper:#f6f8f8;--mint:#e7f2ec;--white:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);font-size:14px;line-height:1.55;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:var(--paper)}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{cursor:pointer}button{color:inherit}a{color:inherit;text-decoration:none}button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #58ad99;outline-offset:3px}h1,h2,h3,p{margin-top:0}h1{font-size:30px;line-height:1.25;letter-spacing:-1px;margin-bottom:10px;font-weight:650}h2{font-size:29px;line-height:1.35;letter-spacing:-.8px;font-weight:650}h3{font-size:16px;line-height:1.5;margin-bottom:10px;font-weight:620}p{color:var(--muted)}small{font-size:12px}svg{flex:none;vertical-align:middle}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.3px}#app{min-height:100vh}.sidebar{width:238px;background:#fff;border-right:1px solid var(--line);position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;padding:29px 19px 0;z-index:10}.brand{display:flex;gap:11px;align-items:center;padding:0 10px 36px;font-size:22px;font-weight:700;letter-spacing:-.6px}.brand img{width:38px;height:38px}.brand span{display:block;font-size:9px;letter-spacing:1.6px;color:var(--muted);font-weight:650;margin-top:1px}.workspace-label{font-size:9px;letter-spacing:1.5px;font-weight:700;color:#8c989f;margin:0 14px 12px}.nav-link{display:flex;align-items:center;gap:12px;padding:12px 13px;border-radius:7px;margin:5px 0;color:#65737c;font-size:13px;font-weight:550;transition:background .15s}.nav-link:hover{background:#f4f6f6}.nav-link.active{background:#eaf3ee;color:#215c4c}.nav-link i{height:6px;width:6px;background:#397965;border-radius:50%;margin-left:auto}.sidebar-bottom{margin-top:auto;padding:28px 12px 24px}.sidebar-bottom p{font-size:12px;line-height:1.8;margin:12px 0}.prototype{font-size:10px;letter-spacing:1.2px;font-weight:650;display:flex;align-items:center;gap:7px}.dot{display:inline-block;height:6px;width:6px;border-radius:50%;background:#4fa68a}.profile{border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:19px 9px;font-size:12px;font-weight:600}.profile small{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:1px}.avatar{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#ebf1ee;color:#326350;font-size:11px;font-weight:650;flex:none}.avatar.alt{background:#e5eef5;color:#486e8c}.workspace{margin-left:238px}.topbar{height:77px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 38px;gap:14px}.breadcrumb{color:#7b8990;font-size:12px}.breadcrumb span{margin:0 14px;color:#c5cdcf}.top-right{display:flex;gap:23px;align-items:center}.role-label{font-size:9px!important;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);gap:1px!important;margin:0!important}.role-label select{padding:0 24px 0 0!important;border:0!important;font-size:11px;background:transparent;min-height:23px!important;letter-spacing:0;text-transform:none}main{max-width:1500px;margin:auto;padding:35px 38px 42px;min-height:calc(100vh - 130px)}.eyebrow{font-size:9px;font-weight:700;letter-spacing:1.6px;color:#89979e;margin-bottom:12px}.page-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:29px}.page-heading p{margin:0;font-size:12px}.actions,.hero-actions{display:flex;gap:10px;align-items:center}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:6px;background:white;padding:10px 15px;min-height:40px;font-size:12px;font-weight:600;white-space:nowrap;transition:background .15s}.button svg{width:16px;height:16px}.button:hover{background:#f2f6f4}.button.primary{background:#236b59;border-color:#236b59;color:white}.button.primary:hover{background:#195441}.button.secondary{background:#fff;border-color:#d7e0dd;color:#305e50}.button.ghost{background:transparent;border-color:transparent}.button.compact{padding:6px 9px;min-height:32px;font-size:11px}.button.danger{color:#a55048}.text-button{background:none;border:0;padding:0;display:inline-flex;gap:8px;align-items:center;font-size:11px;color:var(--muted)}.text-button svg{height:14px;width:14px}.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:4px;background:#edf1f3;font-size:10px;padding:4px 8px;color:#57707c;font-weight:600;white-space:nowrap}.pill.soft{background:#e8f3ec;color:#38745c}.pill.off{background:#f3ece6;color:#9a735b}.hero{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid var(--line);border-radius:10px;background:white;overflow:hidden;margin-bottom:24px}.hero-copy{padding:33px 35px}.hero-copy .eyebrow{color:#6d8b80}.hero-copy h2{font-size:33px;letter-spacing:-1.3px;margin:18px 0 13px;line-height:1.22}.hero-copy p{font-size:12px;line-height:1.9;max-width:360px;margin-bottom:24px}.code-story{background:#193640;color:#e0eee9;margin:12px;border-radius:7px;padding:23px 25px;display:flex;flex-direction:column;justify-content:center;background-image:radial-gradient(#3b596344 .8px,transparent .8px);background-size:14px 14px}.code-story-label{font-size:9px;letter-spacing:1.8px;display:flex;gap:8px;align-items:center;color:#b2cbc4}.large-code{font-family:ui-monospace,Consolas,monospace;font-size:30px;line-height:1.75;letter-spacing:1px;margin:15px 0 17px;font-weight:500}.large-code b{color:#6b8e90;font-weight:400}.large-code span:nth-of-type(2),.large-code span:nth-of-type(6){color:#afe7bd}.code-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:11px 9px;font-size:9px;color:#c1d2d0}.code-story-foot{border-top:1px solid #41606a66;margin-top:22px;padding-top:15px;font-size:10px;color:#8facaf}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:27px}.stat{border:1px solid var(--line);border-radius:8px;background:white;padding:19px 21px}.stat>div{display:flex;justify-content:space-between;align-items:center;color:#7a8c94;font-size:11px}.stat>div svg{height:17px;width:17px;color:#71978b}.stat strong{font-size:29px;letter-spacing:-1px;display:block;margin:7px 0 5px;line-height:1.3;font-weight:600}.stat small{font-size:10px;color:#91a0a6}.two-col{display:grid;grid-template-columns:1.45fr 1fr;gap:22px}.panel{background:white;border:1px solid var(--line);border-radius:9px;padding:23px;min-width:0}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.section-head h3{margin:0}.section-head a{font-size:11px;color:#548473;display:flex;gap:8px;align-items:center}.section-head a svg{width:14px}.recent-row{border:0;border-top:1px solid #edf1f2;background:transparent;padding:17px 0;display:flex;text-align:left;align-items:center;gap:12px;width:100%}.recent-row:last-child{padding-bottom:1px}.recent-row>div:nth-child(2){flex:1;min-width:0}.recent-row strong{display:block;font-size:11px;font-weight:550}.recent-row code{font-size:9px;color:#8e9ca3;display:block;margin-top:5px;overflow-wrap:anywhere}.recent-row>svg{width:15px;color:#8c9b9c}.mini-icon{width:33px;height:36px;border-radius:5px;background:#f1f5f3;color:#719487;display:grid;place-items:center}.mini-icon svg{width:17px}.demo-card{background:#f0f5f2;display:flex;flex-direction:column;align-items:flex-start}.demo-card h3{font-size:21px;letter-spacing:-.6px;margin-bottom:10px}.demo-card p{font-size:12px;line-height:1.85}.people{display:flex;align-items:center;margin:2px 0 20px}.people .avatar{border:2px solid white}.people .avatar+.avatar{margin-left:-7px}.people>span:last-child{font-size:9px;color:#83978e;margin-left:10px}.demo-card>small{font-size:9px;line-height:1.8;margin-top:15px;color:#889b92}footer{display:flex;align-items:center;gap:20px;padding:19px 38px;border-top:1px solid var(--line);font-size:9px;font-weight:650;letter-spacing:1px;color:#9aa8ad}footer span{font-weight:400;letter-spacing:0;font-size:10px}footer button{margin-left:auto!important}.issue-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,1fr);gap:24px}.form-panel{padding:26px}.form-panel .section-head{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px}label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:550;margin-bottom:19px}.required{color:#b78364;display:contents}.optional{font-size:10px;color:#99a2a6;font-weight:400;display:contents}input,select,textarea{border:1px solid #dbe3e3;border-radius:5px;background:white;color:var(--ink);padding:11px 12px;min-height:42px;width:100%;font-size:12px;max-width:100%}input::placeholder,textarea::placeholder{color:#a3afb4}textarea{resize:vertical;min-height:80px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.context-box{display:flex;gap:24px;border:1px solid #e2ece7;background:#f5f9f6;border-radius:6px;padding:16px;font-size:11px;color:#6b8576;margin-bottom:23px}.context-box small{display:block;font-size:8px;letter-spacing:1px;color:#8da395;margin-bottom:4px}.context-box strong{font-size:12px;color:#395d4c}.context-box p{margin:8px 0;font-size:12px}.field-help{font-size:11px;color:#8b9ba2;line-height:1.8}.form-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:27px;padding-top:21px;gap:10px}.form-bottom span{font-size:9px;color:#8b9a92}.form-bottom span svg{width:13px}.preview-panel{background:#1b3540;border-radius:9px;padding:29px;color:white;align-self:start}.preview-panel .eyebrow{color:#90adae}.preview-panel h3{font-size:21px;font-weight:500}.preview-code{border:1px solid #5a797d66;background:#294751;border-radius:6px;padding:20px 15px;font:15px/1.8 ui-monospace,Consolas,monospace;color:#c4f0d0;overflow-wrap:anywhere;margin-bottom:12px}.light{color:#92aaaf;font-size:10px}.parts{margin:22px 0}.parts>div{display:flex;justify-content:space-between;padding:7px 0;font-size:11px;border-bottom:1px solid #4c6b742f}.parts span{color:#9db2b7}.parts strong{font:12px ui-monospace,Consolas,monospace;font-weight:400}.path{margin-top:22px}.path>span{font-size:8px;letter-spacing:1.5px;color:#89a9a7}.path p{font-size:11px;color:#bed4cd;line-height:2;margin:8px 0;overflow-wrap:anywhere}.preview-note{display:flex;gap:9px;border-top:1px solid #506e7455;padding-top:20px;margin-top:22px;font-size:10px;color:#8fa9ae;line-height:1.8}.preview-note svg{width:15px}.error{color:#af504a;font-size:12px;margin:13px 0 0}.error:empty{display:none}.notice{display:flex;align-items:flex-start;gap:10px;background:#edf4f2;border:1px solid #dbe8e1;padding:14px 17px;border-radius:6px;color:#557868;font-size:12px;line-height:1.8;margin-bottom:22px}.notice.warning{display:block;background:#fff8ed;border-color:#eee1c5;color:#977845}.notice .inline-check{font-size:11px}.inline-check{display:flex;flex-direction:row;align-items:center;gap:9px;font-size:12px;margin:12px 0 0}.inline-check input{width:16px;height:16px;min-height:0}.toolbar{display:flex;align-items:center;gap:12px;margin-bottom:22px}.search{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:5px;flex:1;min-width:140px;padding-left:12px;max-width:390px}.search input{border:0;background:none;padding-left:1px;outline-offset:-3px}.search svg{width:16px;color:#92a3a9}.toolbar>select{width:auto;max-width:200px;min-width:140px;font-size:11px}.toolbar .muted{margin-left:auto;font-size:10px}.muted{color:#93a0a5}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:11px}th{background:#f7f9f9;color:#8a989e;text-transform:uppercase;letter-spacing:.6px;font-size:9px;font-weight:600;padding:12px 13px;white-space:nowrap}td{padding:17px 13px;border-bottom:1px solid #edf1f2;vertical-align:middle}tr:last-child td{border-bottom:0}td:last-child{text-align:right;white-space:nowrap}td.title-cell{min-width:220px;max-width:470px}.title-cell strong{font-weight:550;display:block;margin-bottom:5px}.title-cell small{color:#94a0a6;display:block;font-size:9px;margin-top:5px}.title-cell code{display:block;font-size:10px;color:#5a7f75;overflow-wrap:anywhere}.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.category-card{border:1px solid var(--line);border-radius:7px;padding:20px;display:flex;flex-direction:column}.category-card h3{font-size:14px;margin-bottom:12px}.category-card .section-head{margin-bottom:15px}.category-card .section-head small{font-size:9px;color:#97a6a6}.category-card p{font-size:11px;line-height:1.85}.category-card details{font-size:10px;color:#6d8f81;margin-bottom:18px}.category-card summary{cursor:pointer}.category-card details p{font-size:10px;margin-top:10px}.category-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;border-top:1px solid var(--line);padding-top:13px}.status{font-size:9px;color:#6a9881;white-space:nowrap}.status:before{content:'';display:inline-block;height:5px;width:5px;background:#7cab8d;border-radius:50%;margin-right:5px}.status.inactive{color:#aa8972}.status.inactive:before{background:#b99a7f}.empty{text-align:center;padding:50px 20px;color:#9ca9ac}.empty h3{margin-top:14px;color:#688078}.empty p{font-size:12px}.loading,.startup-error{padding:60px;max-width:700px}.skip{position:fixed;top:-50px;left:16px;background:white;padding:10px;z-index:100}.skip:focus{top:10px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}dialog{border:0;border-radius:12px;box-shadow:0 25px 100px #0f293944;width:min(650px,calc(100% - 32px));padding:0;max-height:90vh;color:var(--ink)}dialog::backdrop{background:#142b3866;backdrop-filter:blur(3px)}.modal-head{padding:25px 28px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head .eyebrow{font-size:8px;margin:0 0 6px}.modal-head h2{font-size:22px;margin:0;letter-spacing:-.5px}.icon-button{border:1px solid var(--line);border-radius:50%;height:30px;width:30px;background:white;font-size:21px;display:grid;place-items:center;line-height:1}.modal-body{padding:25px 28px;overflow-wrap:anywhere}.modal-body>p{font-size:12px;line-height:1.8}.modal-footer{border-top:1px solid var(--line);margin-top:22px;padding-top:20px;display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}.modal-footer .danger{margin-right:auto}.result-check{display:grid;place-items:center;height:42px;width:42px;border-radius:50%;background:var(--mint);color:var(--accent);margin-bottom:18px}.result-code{font:16px/1.8 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#366653;background:#edf5ef;padding:17px;border:1px solid #dbe8df;border-radius:6px;margin:18px 0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:23px 0}.detail-grid small{font-size:8px;color:#8b9d9b;letter-spacing:1px;display:block;margin-bottom:6px}.detail-grid strong{font-size:12px;font-weight:550}.id-text{font-size:11px;color:#8d9da0;display:block}.aliases{display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:400}.rules-list>div{display:flex;gap:25px;align-items:baseline;border-bottom:1px solid var(--line);padding:14px 0}.rules-list code{width:60px;flex:none;color:#4d7c68;font-size:13px}.rules-list p{font-size:12px;margin:0}.demo-steps{padding-left:23px}.demo-steps li{padding:7px 0 10px 7px;font-size:13px}.demo-steps p{font-size:12px;margin:6px 0 0}.simulation-results>div{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:7px;padding:14px;margin:12px 0}.simulation-results>div>div{flex:1;min-width:0}.simulation-results small{font-size:8px;letter-spacing:.9px;color:#8ba096;display:block;margin-bottom:5px}.simulation-results code{font-size:11px;color:#346453;overflow-wrap:anywhere}#toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);background:#1f3b43;color:white;border-radius:7px;padding:14px 22px;box-shadow:0 8px 25px #19353f25;font-size:12px;max-width:90vw;z-index:200;opacity:0;pointer-events:none;transition:.2s}#toast.visible{opacity:1;transform:translate(-50%,0)}
+@media(min-width:1600px){main{padding-top:42px}.hero-copy{padding:40px}.hero-copy h2{font-size:39px}.large-code{font-size:37px}.code-story{padding:30px}.category-card{min-height:245px}}
+@media(max-width:1200px){.sidebar{width:210px;padding-left:13px;padding-right:13px}.workspace{margin-left:210px}main{padding:26px}.topbar{padding:0 26px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-copy{padding:25px}.hero-copy h2{font-size:30px}.code-story{padding:20px}.large-code{font-size:24px}.code-labels{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1.25fr 1fr}.issue-layout{grid-template-columns:minmax(0,1.2fr) minmax(260px,1fr)}.form-bottom{align-items:flex-start;flex-direction:column}.toolbar{flex-wrap:wrap}}
+@media(max-width:900px){.sidebar{width:76px;padding:22px 10px}.brand{padding:0 9px 30px}.brand>div,.workspace-label,.nav-link span,.nav-link i,.sidebar-bottom,.profile{display:none}.nav-link{justify-content:center;padding:15px 10px}.workspace{margin-left:76px}.topbar{height:65px}.breadcrumb{font-size:10px}.hero{grid-template-columns:1fr 1fr}.hero-copy h2{font-size:25px}.large-code{font-size:22px}.hero-actions{flex-wrap:wrap}.two-col{grid-template-columns:1fr}.demo-card{display:block}.people{margin-bottom:15px}.demo-card>small{display:block}.issue-layout{grid-template-columns:1fr}.preview-panel{max-width:none}.parts{display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.page-heading{align-items:flex-start}h1{font-size:26px}.stats{gap:10px}.stat{padding:15px}.stat small{font-size:9px}.category-grid{grid-template-columns:1fr 1fr}footer{padding:20px 26px}footer span{display:none}}
+@media(max-width:600px){.sidebar{position:static;width:100%;padding:13px 15px 0;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0;gap:9px;font-size:20px}.brand>div{display:block}.brand img{width:31px;height:31px}.brand span{font-size:8px}.sidebar nav{display:flex;justify-content:space-between;margin-top:12px;gap:4px}.nav-link{flex:1;padding:11px;margin-bottom:0;border-radius:6px 6px 0 0}.workspace{margin-left:0}.topbar{padding:12px 18px;height:auto}.breadcrumb{display:none}.top-right{width:100%;justify-content:space-between;gap:12px}main{padding:25px 17px}.page-heading{display:block;margin-bottom:23px}.page-heading .actions{margin-top:18px}h1{font-size:25px}.hero{display:block}.hero-copy{padding:25px}.hero-copy h2{font-size:30px}.code-story{padding:23px}.large-code{font-size:29px}.code-labels{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:1fr}.stat{display:grid;grid-template-columns:1fr auto;padding:15px 18px;gap:2px 10px}.stat>div{grid-column:1}.stat>div svg{display:none}.stat strong{grid-column:2;grid-row:1/3;margin:0;font-size:29px}.stat small{grid-column:1;grid-row:2}.panel{padding:18px}.two-col{gap:18px}.recent-row{gap:9px}.recent-row>svg{display:none}.category-grid{grid-template-columns:1fr}.toolbar{gap:9px}.toolbar .search{max-width:none;flex-basis:100%}.toolbar>select{flex:1;min-width:100px;max-width:none}.toolbar .muted{margin:0}.form-grid{grid-template-columns:1fr;gap:0}.context-box{gap:16px}.preview-panel{padding:24px}.modal-head,.modal-body{padding:20px}.modal-head h2{font-size:19px}.detail-grid{gap:17px}.simulation-results>div{gap:9px;flex-wrap:wrap}.simulation-results code{font-size:10px}.modal-footer .button{padding:9px 10px;font-size:11px}footer{padding:17px}.hero-actions .button{font-size:11px}.code-story-foot{font-size:9px}.notice{font-size:11px}.role-label select{font-size:10px}.form-bottom{align-items:stretch}.form-bottom>.button{width:100%}.table-wrap{margin:0 -5px}.title-cell{min-width:230px!important}.pill{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<a class="skip" href="#main">Đi đến nội dung</a><div id="app"><p class="loading">Đang mở Classcode…</p></div><dialog id="dialog"></dialog><div id="toast" role="status" aria-live="polite"></div><script type="module">const seed = {
+  "owners": [
+    {
+      "code": "IPAG",
+      "name": "IPA Group"
+    },
+    {
+      "code": "VNDS",
+      "name": "VNDIRECT"
+    },
+    {
+      "code": "PTI",
+      "name": "PTI"
+    },
+    {
+      "code": "IPAAM",
+      "name": "IPAAM"
+    },
+    {
+      "code": "GSF",
+      "name": "GSF"
+    },
+    {
+      "code": "HOMEFOOD",
+      "name": "Homefood"
+    },
+    {
+      "code": "ANVIE",
+      "name": "AnVie"
+    },
+    {
+      "code": "IPAS",
+      "name": "IPAS"
+    },
+    {
+      "code": "CBV",
+      "name": "Crystal Bay Việt Nam"
+    },
+    {
+      "code": "TUNGLAM",
+      "name": "Tùng Lâm"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-ORG",
+      "code": "ORG",
+      "name": "Tổ chức, văn hóa và phương thức làm việc",
+      "include": "Hiểu tổ chức, văn hóa, chuẩn mực, chính sách dành cho nhân viên và phương thức làm việc đặc thù.",
+      "exclude": "Không nhận kỹ năng phổ quát chỉ vì nằm trong onboarding; nghiệp vụ HR đi HR.",
+      "active": true
+    },
+    {
+      "id": "cat-SKL",
+      "code": "SKL",
+      "name": "Năng lực làm việc cá nhân và phối hợp",
+      "include": "Giao tiếp, tư duy phản biện, tự học, quản lý thời gian, trình bày và phối hợp nói chung.",
+      "exclude": "Kỹ năng tư vấn bán hàng đi BIZ; giao quyền và phát triển đội ngũ đi LEAD.",
+      "active": true
+    },
+    {
+      "id": "cat-LEAD",
+      "code": "LEAD",
+      "name": "Lãnh đạo và quản lý đội ngũ",
+      "include": "Dẫn dắt, giao quyền, quản lý hiệu suất, thay đổi và phát triển đội ngũ.",
+      "exclude": "Thiết kế chính sách HR và đào tạo nghề HR đi HR; thiết kế quy trình đi OPS.",
+      "active": true
+    },
+    {
+      "id": "cat-HR",
+      "code": "HR",
+      "name": "Nhân sự và đào tạo",
+      "include": "Tuyển dụng, đánh giá vị trí, mô tả công việc, quản trị nhân sự và đào tạo giảng viên.",
+      "exclude": "Giới thiệu chính sách cho nhân viên đi ORG; kỹ năng dẫn dắt đội ngũ đi LEAD.",
+      "active": true
+    },
+    {
+      "id": "cat-OPS",
+      "code": "OPS",
+      "name": "Quản trị và cải tiến vận hành",
+      "include": "Quản trị doanh nghiệp, thiết kế và cải tiến quy trình, chất lượng, quản lý dự án.",
+      "exclude": "Không thu nhận tất cả lớp có từ quản trị; công nghệ, đầu tư và nhân sự theo nghiệp vụ tương ứng.",
+      "active": true
+    },
+    {
+      "id": "cat-ACC",
+      "code": "ACC",
+      "name": "Kế toán và tài chính doanh nghiệp",
+      "include": "Hạch toán, chứng từ, thu chi, đối soát và kiểm soát chi phí.",
+      "exclude": "Phân tích báo cáo để đầu tư đi INVA; diễn giải quy định thuế đi GRC.",
+      "active": true
+    },
+    {
+      "id": "cat-GRC",
+      "code": "GRC",
+      "name": "Pháp lý, tuân thủ và kiểm soát",
+      "include": "Pháp luật, nghĩa vụ tuân thủ, AML, KYC kiểm soát, kiểm toán và bảo vệ dữ liệu cá nhân.",
+      "exclude": "Bảo mật kỹ thuật đi SEC; KYC để tư vấn/thấu hiểu khách hàng đi BIZ.",
+      "active": true
+    },
+    {
+      "id": "cat-INVF",
+      "code": "INVF",
+      "name": "Nền tảng thị trường và đầu tư",
+      "include": "Cơ chế thị trường, nhập môn đầu tư và nền tảng nghề chứng khoán.",
+      "exclude": "Sản phẩm cụ thể đi INVP; phương pháp phân tích đi INVA; thao tác nghiệp vụ đi INVO.",
+      "active": true
+    },
+    {
+      "id": "cat-INVP",
+      "code": "INVP",
+      "name": "Sản phẩm và dịch vụ đầu tư",
+      "include": "Đặc điểm, cơ chế và điều kiện sản phẩm cổ phiếu, trái phiếu, quỹ, phái sinh và dịch vụ đầu tư.",
+      "exclude": "Phương pháp lựa chọn khoản đầu tư đi INVA; phân bổ theo mục tiêu đi INVW.",
+      "active": true
+    },
+    {
+      "id": "cat-INVA",
+      "code": "INVA",
+      "name": "Phân tích và nghiên cứu đầu tư",
+      "include": "Phân tích kỹ thuật/cơ bản, định giá, nghiên cứu và đánh giá rủi ro đầu tư.",
+      "exclude": "Bản chất sản phẩm đi INVP; xây và quản lý danh mục theo mục tiêu đi INVW.",
+      "active": true
+    },
+    {
+      "id": "cat-INVW",
+      "code": "INVW",
+      "name": "Hoạch định tài chính và quản lý danh mục",
+      "include": "Mục tiêu tài chính, hoạch định, phân bổ và quản lý danh mục tài sản.",
+      "exclude": "Đánh giá riêng một khoản đầu tư đi INVA; bán hàng và xử lý phản đối đi BIZ.",
+      "active": true
+    },
+    {
+      "id": "cat-INVO",
+      "code": "INVO",
+      "name": "Vận hành giao dịch chứng khoán",
+      "include": "Quy trình tài khoản, giao dịch, tiền, lưu ký, quyền và đấu giá.",
+      "exclude": "Chỉ hướng dẫn bấm trên ứng dụng đi APP; giới thiệu đặc điểm dịch vụ đi INVP.",
+      "active": true
+    },
+    {
+      "id": "cat-BIZ",
+      "code": "BIZ",
+      "name": "Bán hàng, tư vấn và chăm sóc khách hàng",
+      "include": "Tiếp cận, tư vấn, bán hàng, marketing và duy trì quan hệ khách hàng.",
+      "exclude": "Thiết kế trải nghiệm/sản phẩm đi CX; học bản chất sản phẩm đi INVP hoặc INSF.",
+      "active": true
+    },
+    {
+      "id": "cat-CX",
+      "code": "CX",
+      "name": "Thiết kế sản phẩm và trải nghiệm khách hàng",
+      "include": "Nghiên cứu, thiết kế sản phẩm, hành trình và trải nghiệm khách hàng.",
+      "exclude": "Thực hành giao tiếp hoặc bán hàng đi BIZ; lập trình và triển khai kỹ thuật đi TECH.",
+      "active": true
+    },
+    {
+      "id": "cat-INSF",
+      "code": "INSF",
+      "name": "Nền tảng và sản phẩm bảo hiểm",
+      "include": "Nguyên lý, hợp đồng, đặc điểm, quyền lợi, điều kiện và quy tắc sản phẩm bảo hiểm.",
+      "exclude": "Cấp đơn/nhập liệu đi INSO; giám định/bồi thường đi INSC; định phí/tái bảo hiểm đi INSR.",
+      "active": true
+    },
+    {
+      "id": "cat-INSO",
+      "code": "INSO",
+      "name": "Khai thác và vận hành hợp đồng bảo hiểm",
+      "include": "Cấp đơn, nhập liệu, phát hành hợp đồng, thu phí và vận hành kênh bảo hiểm.",
+      "exclude": "Không dùng làm nhóm cho mọi thao tác trên phần mềm; nội dung phải gắn nghiệp vụ hợp đồng.",
+      "active": true
+    },
+    {
+      "id": "cat-INSC",
+      "code": "INSC",
+      "name": "Giám định, cứu hộ và bồi thường",
+      "include": "Giám định tổn thất, cứu hộ, hồ sơ, thanh toán và quy trình bồi thường.",
+      "exclude": "Tái bảo hiểm là trọng tâm đi INSR; kiến thức y khoa thuần túy đi MED.",
+      "active": true
+    },
+    {
+      "id": "cat-INSR",
+      "code": "INSR",
+      "name": "Định phí và tái bảo hiểm",
+      "include": "Định phí, mô hình phí, phân tán/chuyển giao rủi ro qua tái bảo hiểm.",
+      "exclude": "Giới thiệu sản phẩm đi INSF; xử lý hồ sơ bồi thường đi INSC.",
+      "active": true
+    },
+    {
+      "id": "cat-TECH",
+      "code": "TECH",
+      "name": "Phát triển phần mềm và hạ tầng",
+      "include": "Lập trình, kiến trúc, vận hành hệ thống, sự cố, thay đổi và quản lý tài sản CNTT.",
+      "exclude": "Sử dụng ứng dụng đi APP; phân tích dữ liệu/AI đi DATA; bảo mật đi SEC.",
+      "active": true
+    },
+    {
+      "id": "cat-DATA",
+      "code": "DATA",
+      "name": "Dữ liệu và ứng dụng AI",
+      "include": "Cơ sở dữ liệu, phân tích dữ liệu, Power BI và ứng dụng AI.",
+      "exclude": "Phân tích đầu tư dùng công cụ số vẫn đi INVA; thao tác phần mềm nghiệp vụ đi APP.",
+      "active": true
+    },
+    {
+      "id": "cat-SEC",
+      "code": "SEC",
+      "name": "An toàn thông tin và bảo mật",
+      "include": "Nhận thức và kỹ thuật bảo vệ thông tin, tài khoản, hệ thống và lập trình an toàn.",
+      "exclude": "Quyền/nghĩa vụ pháp lý về dữ liệu cá nhân đi GRC; an ninh vật lý đi SAF.",
+      "active": true
+    },
+    {
+      "id": "cat-APP",
+      "code": "APP",
+      "name": "Sử dụng nền tảng và công cụ số",
+      "include": "Thao tác nền tảng số, ứng dụng và công cụ làm việc/nghiệp vụ.",
+      "exclude": "Nếu trọng tâm là quy trình chuyên môn thì theo nhóm nghiệp vụ; không phân theo tên phần mềm đơn thuần.",
+      "active": true
+    },
+    {
+      "id": "cat-FNB",
+      "code": "FNB",
+      "name": "Chế biến và vận hành nhà hàng",
+      "include": "Kỹ thuật bếp, vận hành ca, tiêu chuẩn phục vụ tác nghiệp và an toàn thực phẩm.",
+      "exclude": "Giới thiệu thương hiệu đi ORG; tư vấn bán hàng đi BIZ; dinh dưỡng cá nhân đi NUT.",
+      "active": true
+    },
+    {
+      "id": "cat-NUT",
+      "code": "NUT",
+      "name": "Dinh dưỡng và chăm sóc bữa ăn",
+      "include": "Thực dưỡng, lựa chọn thực phẩm và chăm sóc bữa ăn cá nhân/gia đình.",
+      "exclude": "Đào tạo chế biến/vận hành bếp nghề nghiệp đi FNB; bệnh lý và giải phẫu đi MED.",
+      "active": true
+    },
+    {
+      "id": "cat-WELL",
+      "code": "WELL",
+      "name": "Chánh niệm và đời sống tinh thần",
+      "include": "Thiền, chánh niệm, sức khỏe tinh thần và thực hành nếp sống.",
+      "exclude": "Kỹ năng tập trung làm việc thuần túy có thể đi SKL; chương trình chỉ có tên ANVIE chưa đủ để gán.",
+      "active": true
+    },
+    {
+      "id": "cat-MED",
+      "code": "MED",
+      "name": "Y khoa và chăm sóc sức khỏe",
+      "include": "Giải phẫu, bệnh lý, kiến thức y khoa và chăm sóc sức khỏe.",
+      "exclude": "Quyền lợi sản phẩm bảo hiểm sức khỏe đi INSF; hồ sơ giám định đi INSC.",
+      "active": true
+    },
+    {
+      "id": "cat-SAF",
+      "code": "SAF",
+      "name": "An toàn lao động và an ninh vật lý",
+      "include": "Phòng ngừa tai nạn, vệ sinh lao động, bảo vệ con người và an ninh khu vực.",
+      "exclude": "An toàn thông tin đi SEC; an toàn thực phẩm đi FNB.",
+      "active": true
+    }
+  ]
+};
+
+const uid=()=>{if(globalThis.crypto.randomUUID)return globalThis.crypto.randomUUID();const a=globalThis.crypto.getRandomValues(new Uint8Array(16));a[6]=(a[6]&15)|64;a[8]=(a[8]&63)|128;const x=[...a].map(v=>v.toString(16).padStart(2,'0')).join('');return `${x.slice(0,8)}-${x.slice(8,12)}-${x.slice(12,16)}-${x.slice(16,20)}-${x.slice(20)}`};
+const pad=(v,n)=>String(v).padStart(n,'0');
+const norm=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').trim().toLowerCase().replace(/\s+/g,' ');
+const must=(ok,msg)=>{if(!ok)throw new Error(msg)};
+function initialState(){
+ const s={version:1,owners:structuredClone(seed.owners),categories:structuredClone(seed.categories),contents:[],classes:[],requests:{},counters:{},nextContent:1,audit:[]};
+ const samples=[['IPAG','ORG','Văn hóa và cách làm việc chung'],['IPAG','SKL','Giao tiếp và phối hợp hiệu quả'],['IPAG','LEAD','Phản hồi phát triển đội ngũ'],['VNDS','INVP','Tìm hiểu sản phẩm đầu tư'],['VNDS','INVA','Thực hành phân tích doanh nghiệp'],['PTI','INSF','Nhập môn sản phẩm bảo hiểm'],['PTI','INSC','Quy trình tiếp nhận bồi thường'],['IPAS','DATA','Ứng dụng AI trong công việc'],['HOMEFOOD','NUT','Xây dựng bữa ăn cân bằng'],['GSF','FNB','Thực hành dịch vụ nhà hàng']];
+ samples.forEach(([owner,cat,title])=>createContent(s,{owner,categoryId:'cat-'+cat,title}));
+ [[0,'OF','2026-10-05'],[1,'ON','2026-10-12'],[3,'EL','2026-10-15'],[5,'BL','2026-10-20'],[0,'ON','2026-10-23']].forEach(([i,mode,date],j)=>issue(s,{contentId:s.contents[i].id,mode,date,label:'Lớp minh họa '+(j+1),requestId:'seed-'+j}));
+ s.audit=[];return s;
+}
+function log(s,action,detail){s.audit.unshift({id:uid(),time:new Date().toISOString(),action,detail});s.audit=s.audit.slice(0,300)}
+function categoryFor(s,c){return s.categories.find(x=>x.id===c.categoryId)}
+function codeFor(s,c,mode,year,run){return `${c.owner}_${categoryFor(s,c).code}_${pad(c.number,4)}_${mode}_${year}_${pad(run,3)}`}
+function preview(s,contentId,mode,date){
+ const c=s.contents.find(x=>x.id===contentId);if(!c||!mode||!/^\d{4}-\d{2}-\d{2}$/.test(date))return null;
+ const year=Number(date.slice(0,4));return codeFor(s,c,mode,year,(s.counters[`${c.id}|${year}`]||0)+1);
+}
+function createContent(s,{title,owner,categoryId}){
+ title=String(title||'').trim();must(title.length>=4&&title.length<=160,'Tên nội dung cần từ 4 đến 160 ký tự.');must(s.owners.some(o=>o.code===owner),'Chọn đơn vị sở hữu hợp lệ.');must(s.categories.some(c=>c.id===categoryId&&c.active),'Chọn CAT đang hoạt động.');must(!s.contents.some(c=>norm(c.title)===norm(title)&&c.owner===owner),'Đã có nội dung cùng tên trong đơn vị này. Hãy chọn nội dung đã có.');must(s.nextContent<=9999,'Đã hết dải KKKK. Cần điều chỉnh quy tắc.');
+ const c={id:uid(),number:s.nextContent++,title,owner,categoryId};s.contents.push(c);log(s,'Đăng ký nội dung',`${pad(c.number,4)} · ${title}`);return c;
+}
+function issue(s,input){
+ const {contentId,mode,date,requestId}=input;must(typeof requestId==='string'&&requestId.length>0,'Thiếu ID yêu cầu.');if(Object.hasOwn(s.requests,requestId))return {record:s.classes.find(c=>c.id===s.requests[requestId]),reused:true};
+ const c=s.contents.find(c=>c.id===contentId);must(c,'Chọn nội dung lớp.');must(categoryFor(s,c)?.active,'CAT đã ngừng sử dụng. Hãy chuyển nội dung sang nhóm còn hiệu lực.');must(['OF','ON','EL','BL'].includes(mode),'Chọn hình thức học.');
+ must(/^\d{4}-\d{2}-\d{2}$/.test(date||''),'Nhập ngày mở lớp.');const parsed=new Date(date+'T00:00:00Z');must(!isNaN(parsed)&&parsed.toISOString().slice(0,10)===date,'Ngày mở lớp không hợp lệ.');const year=parsed.getUTCFullYear();must(year>=1900&&year<=2199,'Năm phải từ 1900 đến 2199.');
+ const key=`${c.id}|${year}`,run=(s.counters[key]||0)+1;must(run<=999,'Đã hết dải DDD cho nội dung trong năm này.');const code=codeFor(s,c,mode,year,run);must(!s.classes.some(x=>x.code===code||x.aliases.includes(code)),'Mã đã tồn tại.');
+ const record={id:uid(),contentId,mode,date,year,run,code,aliases:[],label:String(input.label||'').trim().slice(0,120),status:'active',createdAt:new Date().toISOString()};s.counters[key]=run;s.classes.unshift(record);s.requests[requestId]=record.id;log(s,'Cấp mã lớp',code);return {record,reused:false};
+}
+function addCategory(s,{code,name,include,exclude}){
+ code=String(code||'').trim().toUpperCase();name=String(name||'').trim();must(/^[A-Z][A-Z0-9]{1,7}$/.test(code),'CAT cần 2–8 ký tự A–Z, 0–9, bắt đầu bằng chữ.');must(!s.categories.some(c=>c.code===code),'Mã CAT đã tồn tại, kể cả CAT đã ngừng.');must(name.length>=4&&name.length<=100,'Tên nhóm cần 4–100 ký tự.');must(!s.categories.some(c=>norm(c.name)===norm(name)),'Tên nhóm đã tồn tại.');must(String(include||'').trim().length>=8,'Mô tả nội dung bao gồm để người dùng chọn đúng.');
+ const c={id:uid(),code,name,include:String(include).trim().slice(0,500),exclude:String(exclude||'').trim().slice(0,500),active:true};s.categories.push(c);log(s,'Thêm CAT',`${code} · ${name}`);return c;
+}
+function setCategoryActive(s,id,active){const c=s.categories.find(c=>c.id===id);must(c,'Không tìm thấy CAT.');c.active=active;log(s,active?'Kích hoạt CAT':'Ngừng CAT',c.code);return c}
+function recode(s,content){for(const r of s.classes.filter(x=>x.contentId===content.id)){const next=codeFor(s,content,r.mode,r.year,r.run);if(next!==r.code){must(!s.classes.some(x=>x.id!==r.id&&(x.code===next||x.aliases.includes(next))),'Mã mới trùng với mã đã lưu.');r.aliases=[...new Set([...r.aliases,r.code])].filter(x=>x!==next);r.code=next}}}
+function editContent(s,id,{title,owner,categoryId,reason}){
+ const c=s.contents.find(x=>x.id===id);must(c,'Không tìm thấy nội dung.');must(String(reason||'').trim().length>=5,'Ghi lý do thay đổi (ít nhất 5 ký tự).');must(s.owners.some(x=>x.code===owner),'Đơn vị không hợp lệ.');must(s.categories.some(x=>x.id===categoryId&&x.active),'CAT không hoạt động.');must(String(title||'').trim().length>=4&&String(title).trim().length<=160,'Tên cần 4–160 ký tự.');must(!s.contents.some(x=>x.id!==id&&x.owner===owner&&norm(x.title)===norm(title)),'Tên trùng với nội dung đã có.');const old=`${c.owner}/${categoryFor(s,c).code}`;Object.assign(c,{title:title.trim(),owner,categoryId});recode(s,c);log(s,'Chuyển / sửa nội dung',`${pad(c.number,4)}: ${old} → ${owner}/${categoryFor(s,c).code}. ${reason}`);return c;
+}
+function renameCategory(s,id,{name,code,reason}){
+ const c=s.categories.find(x=>x.id===id);must(c,'Không tìm thấy CAT.');code=String(code).trim().toUpperCase();must(/^[A-Z][A-Z0-9]{1,7}$/.test(code),'Mã CAT không hợp lệ.');must(!s.categories.some(x=>x.id!==id&&x.code===code),'Mã CAT đã tồn tại.');must(String(name).trim().length>=4&&String(name).trim().length<=100,'Tên nhóm cần 4–100 ký tự.');must(!s.categories.some(x=>x.id!==id&&norm(x.name)===norm(name)),'Tên nhóm đã tồn tại.');must(String(reason||'').trim().length>=5,'Ghi lý do thay đổi.');const old=c.code;c.code=code;c.name=name.trim();s.contents.filter(x=>x.categoryId===id).forEach(x=>recode(s,x));log(s,'Sửa CAT',`${old} → ${code}. ${reason}`);return c;
+}
+function cancelClass(s,id){const c=s.classes.find(c=>c.id===id);must(c,'Không tìm thấy lớp.');must(c.status!=='cancelled','Lớp đã hủy.');c.status='cancelled';log(s,'Hủy lớp, giữ mã',c.code);return c}
+function csvCell(v){let x=String(v??'');if(/^[=+@\-\t\r]/.test(x))x="'"+x;return '"'+x.replaceAll('"','""')+'"'}
+
+let dbPromise;
+function openDB(){if(!dbPromise)dbPromise=new Promise((resolve,reject)=>{const q=indexedDB.open('ipag-classcode-prototype-v1',1);q.onupgradeneeded=()=>q.result.createObjectStore('app');q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});return dbPromise}
+async function transact(fn){const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction('app','readwrite'),store=tx.objectStore('app');let result,error;const q=store.get('state');q.onsuccess=()=>{try{const s=q.result||initialState();result=fn(s);store.put(s,'state')}catch(e){error=e;tx.abort()}};tx.oncomplete=()=>{channel?.postMessage('updated');resolve(result)};tx.onabort=()=>reject(error||tx.error||new Error('Không thể lưu dữ liệu.'));tx.onerror=()=>{error=tx.error}})}
+async function read(){const db=await openDB();return new Promise((resolve,reject)=>{const q=db.transaction('app').objectStore('app').get('state');q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)})}
+async function reset(){const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction('app','readwrite');tx.objectStore('app').put(initialState(),'state');tx.oncomplete=()=>{channel?.postMessage('updated');resolve()};tx.onabort=()=>reject(tx.error)})}
+const channel=typeof BroadcastChannel!=='undefined'?new BroadcastChannel('ipag-classcode-v1'):null;
+function onUpdate(fn){if(channel)channel.onmessage=fn}
+
+const $=s=>document.querySelector(s),h=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icons={home:'M3 10 12 3l9 7v10H3Z M9 20v-7h6v7',plus:'M12 5v14 M5 12h14',book:'M4 4h12a4 4 0 0 1 4 4v13H8a4 4 0 0 1-4-4Zm0 13a4 4 0 0 1 4-4h12',grid:'M3 3h7v7H3Z M14 3h7v7h-7Z M3 14h7v7H3Z M14 14h7v7h-7Z',list:'M8 5h13 M8 12h13 M8 19h13 M3 5h1 M3 12h1 M3 19h1',arrow:'M5 12h14 M14 6l6 6-6 6',download:'M12 3v12 M7 10l5 5 5-5 M4 17v4h16v-4',check:'m5 12 4 4L20 5',clock:'M12 8v5l3 2 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',search:'M16 16l5 5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0',info:'M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',bolt:'m13 2-9 12h7l-1 8 10-12h-7Z'};
+const ico=n=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${icons[n]||icons.grid}"/></svg>`;
+const modes={OF:'Offline',ON:'Online trực tiếp',EL:'E-learning',BL:'Blended'};
+let s,view='home',role='admin',search='',ownerFilter='',modeFilter='',categoryFilter='active',requestId=uid(),lastIssue=null;
+const dialog=$('#dialog');let modalAction=null;
+function toast(t){$('#toast').textContent=t;$('#toast').classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('visible'),4200)}
+function pill(t,kind=''){return `<span class="pill ${kind}">${h(t)}</span>`}
+function btn(label,action,kind='',id=''){return `<button class="button ${kind}" data-action="${action}" data-id="${h(id)}">${label}</button>`}
+const ownerOpts=(selected='')=>s.owners.map(o=>`<option value="${o.code}" ${o.code===selected?'selected':''}>${h(o.name)} · ${o.code}</option>`).join('');
+const catOpts=(selected='')=>s.categories.filter(c=>c.active).map(c=>`<option value="${c.id}" ${c.id===selected?'selected':''}>${h(c.name)} · ${c.code}</option>`).join('');
+function header(title,desc,actions=''){return `<div class="page-heading"><div><div class="eyebrow">WORKSPACE / ${view==='home'?'OVERVIEW':'CLASS MANAGEMENT'}</div><h1>${title}</h1><p>${desc}</p></div><div class="actions">${actions}</div></div>`}
+function render(){
+ const nav=[['home','home','Tổng quan'],['issue','plus','Mở lớp & cấp mã'],['contents','book','Nội dung lớp'],['cats','grid','Danh mục CAT'],['registry','list','Sổ mã lớp']];
+ $('#app').innerHTML=`<aside class="sidebar"><a class="brand" href="#home"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxNjNiNDUiLz48cGF0aCBkPSJNMjMgMTkgMTEgMzJsMTIgMTNtMTgtMjYgMTIgMTMtMTIgMTNNMzYgMTUgMjggNDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JjZjJkMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K" alt=""><div>Classcode<span>IPA GROUP · LEARNING</span></div></a><div class="workspace-label">KHÔNG GIAN LÀM VIỆC</div><nav aria-label="Điều hướng">${nav.map(([id,icon,label])=>`<a href="#${id}" class="nav-link ${id===view?'active':''}" ${id===view?'aria-current="page"':''}>${ico(icon)}<span>${label}</span>${id===view?'<i></i>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="prototype"><span class="dot"></span> PROTOTYPE V1.0</div><p>Dữ liệu minh họa.<br>Lưu riêng trên trình duyệt này.</p><button class="text-button" data-action="help">Cách trình bày demo ${ico('arrow')}</button></div><div class="profile"><div class="avatar">LD</div><div>L&D Workspace<small>IPA Group</small></div></div></aside>
+ <div class="workspace"><header class="topbar"><div class="breadcrumb">Learning operations <span>/</span> Classcode</div><div class="top-right">${pill('Demo cục bộ','soft')}<label class="role-label">Vai trò mô phỏng<select id="role" aria-label="Vai trò mô phỏng"><option value="admin" ${role==='admin'?'selected':''}>Quản trị danh mục</option><option value="ld" ${role==='ld'?'selected':''}>L&D contact point</option></select></label></div></header><main id="main" tabindex="-1">${({home:home,issue:issuePage,contents:contentsPage,cats:catsPage,registry:registryPage}[view])()}</main><footer>CLASSCODE <span>Đơn vị sở hữu → Nhóm chủ đề → Lớp học</span><button data-action="help" class="text-button">Phạm vi prototype ${ico('info')}</button></footer></div>`;
+ if(view==='issue')updatePreview();
+}
+function home(){return `${header('Mỗi lớp học, một mã rõ ràng.','Từ nội dung đến lần mở lớp. Một quy trình thống nhất cho toàn tập đoàn.',btn(`${ico('plus')} Mở lớp mới`,'navigate','primary','issue'))}
+ <div class="hero"><div class="hero-copy"><span class="eyebrow">THƯ MỤC 3 TẦNG · QUY TẮC 6 TRƯỜNG</span><h2>Chọn thông tin.<br>Để hệ thống cấp mã.</h2><p>Liên kết đơn vị sở hữu, nhóm chủ đề và từng lần mở lớp. Giữ lịch sử ngay cả khi danh mục thay đổi.</p><div class="hero-actions">${btn('Thử cấp mã '+ico('arrow'),'navigate','primary','issue')}${btn('Xem quy tắc','rules','ghost')}</div></div><div class="code-story"><div class="code-story-label"><span class="dot"></span> CẤU TRÚC NAMECODE</div><div class="large-code"><span>IPAG</span><b>_</b><span>SKL</span><b>_</b><span>0002</span><br><span>OF</span><b>_</b><span>2026</span><b>_</b><span>001</span></div><div class="code-labels"><span>OWN · Chủ sở hữu</span><span>CAT · Nhóm chủ đề</span><span>KKKK · Nội dung</span><span>HT · Hình thức</span><span>YYYY · Năm mở</span><span>DDD · Lần đăng ký</span></div><div class="code-story-foot">Một nội dung. Nhiều lần mở. Không thêm tầng thư mục.</div></div></div>
+ <div class="stats">${[['Mã lớp đã cấp',s.classes.length,'list','Kể cả lớp hủy để giữ lịch sử'],['Nội dung lớp',s.contents.length,'book','Dùng lại KKKK cho lần mở mới'],['CAT đang hoạt động',s.categories.filter(c=>c.active).length,'grid','Danh mục cập nhật ngay trong app']].map(([label,value,icon,note])=>`<div class="stat"><div><span>${label}</span>${ico(icon)}</div><strong>${value}</strong><small>${note}</small></div>`).join('')}</div>
+ <div class="two-col"><section class="panel"><div class="section-head"><h3>Mã lớp gần đây</h3><a href="#registry">Xem tất cả ${ico('arrow')}</a></div>${s.classes.slice(0,4).map(r=>{const c=s.contents.find(c=>c.id===r.contentId);return `<button class="recent-row" data-action="detail" data-id="${r.id}"><div class="mini-icon">${ico('book')}</div><div><strong>${h(c.title)}</strong><code>${h(r.code)}</code></div>${pill(r.mode)}${ico('arrow')}</button>`}).join('')}</section><section class="panel demo-card"><span class="eyebrow">THỬ NGHIỆM QUY TRÌNH</span><h3>Hai yêu cầu. Hai mã riêng.</h3><p>Mô phỏng hai người cùng cấp mã cho một nội dung và một năm. Sau đó gửi lại yêu cầu đầu để kiểm tra chống cấp lặp.</p><div class="people"><span class="avatar">A</span><span class="avatar alt">B</span><span>Cùng trình duyệt · dữ liệu dùng chung</span></div>${btn('Chạy mô phỏng '+ico('bolt'),'simulation','secondary')}<small>Mô phỏng giao dịch cục bộ; không phải cấp mã giữa nhiều máy.</small></section></div>`}
+function issuePage(){return `${header('Mở lớp & cấp mã','Chọn nội dung đã có. Hệ thống tự lấy đơn vị sở hữu và CAT từ sổ nội dung.',btn(ico('plus')+' Nội dung mới','new-content','secondary'))}<div class="issue-layout"><section class="panel form-panel"><div class="section-head"><h3>Thông tin lớp học</h3>${pill('01 / NHẬP THÔNG TIN','soft')}</div><form id="issue-form"><label>Nội dung lớp <span class="required">*</span><select name="contentId" required><option value="">Chọn nội dung trong sổ…</option>${s.contents.map(c=>`<option value="${c.id}" ${!categoryFor(s,c).active?'disabled':''}>${h(c.title)} · ${pad(c.number,4)}${categoryFor(s,c).active?'':' · CAT đã ngừng'}</option>`).join('')}</select></label><div id="content-context" class="context-box">${ico('info')} Đơn vị sở hữu, CAT và KKKK sẽ được lấy tự động.</div><div class="form-grid"><label>Hình thức học <span class="required">*</span><select name="mode" required><option value="">Chọn hình thức…</option>${Object.entries(modes).map(([k,v])=>`<option value="${k}">${v} · ${k}</option>`).join('')}</select></label><label>Ngày mở lớp <span class="required">*</span><input name="date" type="date" min="1900-01-01" max="2199-12-31" required></label></div><label>Nhãn đợt / địa điểm <span class="optional">Tùy chọn</span><input name="label" maxlength="120" placeholder="Ví dụ: Đợt tháng 11 · Hà Nội"></label><p class="field-help">Online là lớp trực tuyến theo lịch. E-learning là tự học. Nhãn đợt giúp tra cứu và không nằm trong mã.</p><div id="duplicate-warning"></div><div class="form-bottom"><span>${ico('check')} Số được cấp khi lưu thành công</span><button class="button primary" type="submit">Cấp mã & lưu lớp ${ico('arrow')}</button></div><p class="error" id="issue-error" role="alert"></p></form></section><aside class="preview-panel"><div class="eyebrow">02 / XEM TRƯỚC</div><h3>Mã lớp của bạn</h3><div class="preview-code" id="code-preview">Chưa đủ thông tin</div><p class="field-help light">Xem trước chưa giữ số. Mã chính thức của bản demo được cấp khi bấm lưu.</p><div id="code-parts" class="parts"></div><div class="path"><span>ĐƯỜNG DẪN THƯ MỤC</span><p id="path-preview">Đơn vị sở hữu<br>↳ Nhóm chủ đề<br>　↳ [Mã] Tên lớp</p></div><div class="preview-note">${ico('info')} DDD tăng theo nội dung và năm, xuyên các hình thức. Mã đã hủy không được cấp lại.</div></aside></div>`}
+function updatePreview(){const f=$('#issue-form');if(!f)return;const v=Object.fromEntries(new FormData(f)),c=s.contents.find(x=>x.id===v.contentId),p=preview(s,v.contentId,v.mode,v.date);$('#code-preview').textContent=p||'Chưa đủ thông tin';$('#content-context').innerHTML=c?`<div><small>ĐƠN VỊ SỞ HỮU</small><strong>${h(c.owner)}</strong></div><div><small>NHÓM CHỦ ĐỀ</small><strong>${h(categoryFor(s,c).code)}</strong></div><div><small>NỘI DUNG</small><strong>${pad(c.number,4)}</strong></div>`:`${ico('info')} Đơn vị sở hữu, CAT và KKKK sẽ được lấy tự động.`;$('#code-parts').innerHTML=p?p.split('_').map((v,i)=>`<div><span>${['Chủ sở hữu','Nhóm chủ đề','Nội dung lớp','Hình thức','Năm mở','Số đăng ký'][i]}</span><strong>${h(v)}</strong></div>`).join(''):'';$('#path-preview').innerHTML=c?`${h(c.owner)}<br>↳ ${h(categoryFor(s,c).name)}<br>　↳ ${h(p?'['+p+'] ':'')}${h(c.title)}`:'Đơn vị sở hữu<br>↳ Nhóm chủ đề<br>　↳ [Mã] Tên lớp';const matches=s.classes.filter(r=>r.contentId===v.contentId&&r.mode===v.mode&&r.date===v.date&&r.status==='active');$('#duplicate-warning').innerHTML=matches.length?`<div class="notice warning">Đã có ${matches.length} lớp cùng nội dung, hình thức và ngày. Kiểm tra Sổ mã trước khi cấp thêm.<label class="inline-check"><input type="checkbox" name="distinct" required> Tôi xác nhận đây là một lần mở lớp khác.</label></div>`:'';}
+function contentsPage(){return `${header('Sổ nội dung lớp','Một nội dung có một KKKK ổn định. Dùng lại khi mở lớp ở năm hoặc hình thức khác.',btn(ico('plus')+' Đăng ký nội dung','new-content','primary'))}<section class="panel"><div class="toolbar"><div class="search">${ico('search')}<input id="search" aria-label="Tìm nội dung" placeholder="Tìm tên nội dung hoặc KKKK…" value="${h(search)}"></div><select id="owner-filter" aria-label="Lọc chủ sở hữu"><option value="">Tất cả đơn vị</option>${ownerOpts(ownerFilter)}</select><span class="muted">${s.contents.length} nội dung minh họa / đã tạo</span></div><div id="table-results">${contentRows()}</div></section>`}
+function contentRows(){const rows=s.contents.filter(c=>(!ownerFilter||c.owner===ownerFilter)&&norm(c.title+' '+pad(c.number,4)).includes(norm(search)));return `<div class="table-wrap"><table><thead><tr><th>KKKK</th><th>Nội dung lớp</th><th>Đơn vị</th><th>CAT</th><th>Lần mở</th><th><span class="sr-only">Thao tác</span></th></tr></thead><tbody>${rows.map(c=>`<tr><td><code>${pad(c.number,4)}</code></td><td class="title-cell"><strong>${h(c.title)}</strong><small>${h(categoryFor(s,c).name)}${categoryFor(s,c).active?'':' · CAT đã ngừng'}</small></td><td>${pill(c.owner)}</td><td>${pill(categoryFor(s,c).code,categoryFor(s,c).active?'soft':'off')}</td><td>${s.classes.filter(r=>r.contentId===c.id).length}</td><td>${btn('Mở lớp','open-content','compact',c.id)} ${role==='admin'?btn('Sửa','edit-content','compact ghost',c.id):''}</td></tr>`).join('')}</tbody></table>${rows.length?'':empty('Không tìm thấy nội dung','Thử một từ khóa hoặc đơn vị khác.')}</div>`}
+function catsPage(){return `${header('Danh mục nhóm chủ đề','Một cấp CAT, dùng chung quy tắc. Thay đổi danh mục mà không cần sửa mã nguồn.',role==='admin'?btn(ico('plus')+' Thêm CAT','new-cat','primary'):pill('Chế độ xem'))}<div class="notice">${ico('info')} Ngừng CAT sẽ chặn đăng ký và mở lớp mới trong nhóm. Lớp đã cấp mã vẫn được giữ để tra cứu.</div><section class="panel"><div class="toolbar"><div class="search">${ico('search')}<input id="search" aria-label="Tìm CAT" placeholder="Tìm nhóm chủ đề hoặc mã CAT…" value="${h(search)}"></div><select id="cat-filter" aria-label="Trạng thái CAT"><option value="active" ${categoryFilter==='active'?'selected':''}>Đang hoạt động</option><option value="all" ${categoryFilter==='all'?'selected':''}>Tất cả trạng thái</option><option value="inactive" ${categoryFilter==='inactive'?'selected':''}>Đã ngừng</option></select></div><div id="table-results">${catRows()}</div></section>`}
+function catRows(){const rows=s.categories.filter(c=>(categoryFilter==='all'||c.active===(categoryFilter==='active'))&&norm(c.name+' '+c.code).includes(norm(search)));return `<div class="category-grid">${rows.map(c=>`<article class="category-card"><div class="section-head">${pill(c.code,c.active?'soft':'off')}<small>${s.contents.filter(x=>x.categoryId===c.id).length} nội dung</small></div><h3>${h(c.name)}</h3><p>${h(c.include)}</p><details><summary>Ranh giới phân loại</summary><p>${h(c.exclude||'Chưa bổ sung điều kiện loại trừ.')}</p></details><div class="category-actions"><span class="status ${c.active?'':'inactive'}">${c.active?'Đang hoạt động':'Đã ngừng'}</span>${role==='admin'?`<div>${btn('Sửa','edit-cat','compact ghost',c.id)}${btn(c.active?'Ngừng':'Kích hoạt','toggle-cat','compact ghost',c.id)}</div>`:''}</div></article>`).join('')||empty('Không có CAT phù hợp','Thay đổi bộ lọc hoặc thêm nhóm chủ đề mới.')}</div>`}
+function registryPage(){return `${header('Sổ mã lớp','Tra cứu bằng tên, mã hiện hành hoặc mã cũ. Mỗi lớp giữ một ID bất biến.',btn(ico('download')+' Xuất CSV','export-csv','secondary'))}<section class="panel"><div class="toolbar"><div class="search wide">${ico('search')}<input id="search" aria-label="Tìm mã lớp" placeholder="Tìm tên lớp, mã hiện hành hoặc mã cũ…" value="${h(search)}"></div><select id="owner-filter" aria-label="Lọc đơn vị"><option value="">Tất cả đơn vị</option>${ownerOpts(ownerFilter)}</select><select id="mode-filter" aria-label="Lọc hình thức"><option value="">Tất cả hình thức</option>${Object.entries(modes).map(([k,v])=>`<option value="${k}" ${modeFilter===k?'selected':''}>${v}</option>`).join('')}</select></div><div id="table-results">${registryRows()}</div></section>`}
+function registryRows(){const rows=s.classes.filter(r=>{const c=s.contents.find(x=>x.id===r.contentId);return (!ownerFilter||c.owner===ownerFilter)&&(!modeFilter||r.mode===modeFilter)&&norm(r.code+' '+r.aliases.join(' ')+' '+c.title+' '+r.label).includes(norm(search))});return `<div class="table-wrap"><table><thead><tr><th>Lớp học / Namecode</th><th>Ngày mở</th><th>Hình thức</th><th>Trạng thái</th><th></th></tr></thead><tbody>${rows.map(r=>{const c=s.contents.find(x=>x.id===r.contentId);return `<tr><td class="title-cell"><strong>${h(c.title)}</strong><code>${h(r.code)}</code><small>${h(r.label)}${r.aliases.length?' · '+r.aliases.length+' mã cũ':''}</small></td><td>${h(r.date.split('-').reverse().join('/'))}</td><td>${pill(r.mode)}</td><td>${pill(r.status==='active'?'Đã cấp':'Đã hủy',r.status==='active'?'soft':'off')}</td><td>${btn('Chi tiết '+ico('arrow'),'detail','compact ghost',r.id)}</td></tr>`}).join('')}</tbody></table>${rows.length?'':empty('Chưa tìm thấy lớp','Tìm theo tên, mã hiện hành hoặc một mã đã đổi trước đây.')}</div>`}
+function empty(t,p){return `<div class="empty">${ico('search')}<h3>${t}</h3><p>${p}</p></div>`}
+function showDialog(title,body,action=null){modalAction=action;dialog.innerHTML=`<div class="modal-head"><div><span class="eyebrow">CLASSCODE WORKSPACE</span><h2>${title}</h2></div><button class="icon-button" data-action="close" aria-label="Đóng">×</button></div><div class="modal-body">${body}</div>`;if(!dialog.open)dialog.showModal()}
+function close(){dialog.close();modalAction=null}
+function modalForm(html,save='Lưu thay đổi'){return `<form id="modal-form">${html}<p class="error" id="modal-error" role="alert"></p><div class="modal-footer">${btn('Đóng','close','ghost')}<button class="button primary" type="submit">${save} ${ico('check')}</button></div></form>`}
+function contentDialog(id){const c=s.contents.find(x=>x.id===id);showDialog(c?'Chỉnh sửa nội dung lớp':'Đăng ký nội dung lớp',modalForm(`<div class="notice">${c?'Đổi nhánh sẽ cập nhật mã hiện hành của các lớp liên quan. ID và mã cũ vẫn được giữ.':'KKKK được hệ thống cấp. Tên lớp trong prototype là dữ liệu minh họa, không phải phân loại đã duyệt.'}</div><label>Tên nội dung lớp<input name="title" value="${h(c?.title||'')}" minlength="4" maxlength="160" required placeholder="Ví dụ: Thực hành kỹ năng thuyết trình"></label><div class="form-grid"><label>Đơn vị sở hữu<select name="owner" required>${ownerOpts(c?.owner||'IPAG')}</select></label><label>Nhóm chủ đề<select name="categoryId" required>${catOpts(c?.categoryId)}</select></label></div><div id="cat-guidance" class="context-box"></div>${c?'<label>Lý do thay đổi<input name="reason" required minlength="5" placeholder="Ghi lý do chuyển nhánh hoặc đổi tên"></label>':''}`,c?'Lưu & cập nhật mã':'Đăng ký nội dung'),async v=>{await transact(x=>c?editContent(x,c.id,v):createContent(x,v));await refresh();close();toast(c?'Đã cập nhật nhánh. Mã cũ vẫn tra cứu được.':'Đã đăng ký nội dung và cấp KKKK.');});updateCatGuidance()}
+function updateCatGuidance(){const select=dialog.querySelector('[name=categoryId]'),box=$('#cat-guidance');if(!select||!box)return;const c=s.categories.find(x=>x.id===select.value);box.innerHTML=c?`<div><strong>${h(c.code)} · ${h(c.name)}</strong><p>${h(c.include)}</p><small>Loại trừ: ${h(c.exclude||'Chưa bổ sung')}</small></div>`:''}
+function categoryDialog(id){const c=s.categories.find(x=>x.id===id);showDialog(c?'Chỉnh sửa CAT':'Thêm nhóm chủ đề',modalForm(`${c?'<div class="notice">Nếu đổi mã CAT, mã lớp hiện hành sẽ đổi theo. Mã cũ trở thành mã tra cứu thay thế; ID lớp không đổi.</div>':''}<div class="form-grid"><label>Mã CAT<input name="code" value="${h(c?.code||'')}" pattern="[A-Za-z][A-Za-z0-9]{1,7}" maxlength="8" required placeholder="Ví dụ: ESG"></label><label>Tên nhóm<input name="name" value="${h(c?.name||'')}" minlength="4" maxlength="100" required placeholder="Tên nhóm chủ đề"></label></div>${c?'<label>Lý do thay đổi<input name="reason" minlength="5" required></label>':'<label>Nội dung bao gồm<textarea name="include" minlength="8" maxlength="500" required placeholder="Nhóm này dùng cho những nội dung nào?"></textarea></label><label>Ranh giới / loại trừ<textarea name="exclude" maxlength="500" placeholder="Những nội dung dễ nhầm nên thuộc nhóm nào khác?"></textarea></label>'}`,c?'Lưu thay đổi':'Thêm & kích hoạt'),async v=>{await transact(x=>c?renameCategory(x,c.id,v):addCategory(x,v));await refresh();close();toast(c?'Đã cập nhật CAT và mã liên quan.':'CAT mới đã có trong danh sách đăng ký nội dung.');})}
+function detail(id){const r=s.classes.find(r=>r.id===id),c=s.contents.find(c=>c.id===r.contentId);showDialog('Chi tiết lớp học',`<div class="result-check">${ico('check')}</div><h3>${h(c.title)}</h3><div class="result-code">${h(r.code)}</div><div class="detail-grid"><div><small>ĐƠN VỊ / NHÓM</small><strong>${h(c.owner)} / ${h(categoryFor(s,c).code)}</strong></div><div><small>NGÀY MỞ / HÌNH THỨC</small><strong>${h(r.date)} · ${h(modes[r.mode])}</strong></div><div><small>NỘI DUNG / SỐ ĐĂNG KÝ</small><strong>${pad(c.number,4)} / ${pad(r.run,3)}</strong></div><div><small>TRẠNG THÁI</small><strong>${r.status==='active'?'Đã cấp mã':'Đã hủy · giữ số'}</strong></div></div><label>ID lớp bất biến<code class="id-text">${r.id}</code></label><label>Mã cũ / alias<div class="aliases">${r.aliases.map(a=>`<code>${h(a)}</code>`).join('')||'<span class="muted">Chưa có thay đổi mã.</span>'}</div></label><div class="modal-footer">${btn('Sao chép mã','copy','secondary',r.code)}${r.status==='active'?btn('Hủy lớp','cancel','ghost danger',r.id):''}${btn('Đóng','close','primary')}</div>`)}
+function help(){showDialog('Kịch bản trình bày nội bộ',`<ol class="demo-steps"><li><strong>Mở một lớp mới</strong><p>Chọn nội dung, hình thức, ngày. Quan sát mã xem trước và bấm cấp mã.</p></li><li><strong>Thử cấp mã đồng thời</strong><p>Từ Tổng quan, chạy hai yêu cầu. Gửi lại yêu cầu đầu không tạo mã mới.</p></li><li><strong>Thêm một CAT</strong><p>Tạo CAT ESG, đăng ký nội dung trong nhóm mới, rồi mở lớp.</p></li><li><strong>Thay đổi và tra cứu</strong><p>Đổi mã CAT hoặc chuyển nhánh nội dung. Dùng mã cũ tìm lại lớp trong Sổ mã.</p></li></ol><div class="notice warning">Dữ liệu mẫu được tạo để demo. Vai trò chỉ là mô phỏng, không phải đăng nhập hay phân quyền thật. Dữ liệu lưu trong IndexedDB của trình duyệt này; thiết bị hoặc trình duyệt khác có sổ riêng.</div><p>Các tab cùng địa chỉ dùng chung sổ và giao dịch ghi. GitHub Pages chỉ phục vụ giao diện tĩnh, chưa có máy chủ cấp mã cho toàn tập đoàn.</p><div class="modal-footer">${btn('Xuất bản sao JSON','export-json','secondary')}${btn('Đặt lại demo','reset','ghost danger')}${btn('Bắt đầu demo','close','primary')}</div>`)}
+async function simulate(){const c=s.contents.find(x=>categoryFor(s,x).active);if(!c)return toast('Cần có nội dung thuộc CAT đang hoạt động.');const id=uid(),input={contentId:c.id,mode:'OF',date:'2026-11-20',label:'Mô phỏng cấp đồng thời'};const results=await Promise.all([transact(x=>issue(x,{...input,requestId:id})),transact(x=>issue(x,{...input,requestId:uid()}))]);const retry=await transact(x=>issue(x,{...input,requestId:id}));await refresh();showDialog('Hai yêu cầu đã được xử lý',`<p>Cùng nội dung <strong>${h(c.title)}</strong>, cùng năm 2026. Hai giao dịch được ghi vào sổ trình duyệt.</p><div class="simulation-results">${results.map((r,i)=>`<div><span class="avatar">${i?'B':'A'}</span><div><small>YÊU CẦU ${i?'B':'A'}</small><code>${h(r.record.code)}</code></div>${pill('Đã cấp','soft')}</div>`).join('')}<div><span class="avatar alt">↻</span><div><small>GỬI LẠI YÊU CẦU A</small><code>${h(retry.record.code)}</code></div>${pill('Giữ mã cũ','soft')}</div></div><div class="notice">Chỉ thêm 2 lớp. Yêu cầu gửi lại không tạo lớp thứ ba. Phạm vi thử: cùng trình duyệt và cùng địa chỉ website.</div><div class="modal-footer">${btn('Xem sổ mã','go-registry','primary')}${btn('Đóng','close','ghost')}</div>`)}
+function download(name,text,type){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+async function refresh(){s=await read();render()}
+function navigate(v){location.hash=v}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action,id=b.dataset.id;try{
+ if(['new-cat','edit-cat','toggle-cat','edit-content'].includes(a)&&role!=='admin')return toast('Chuyển sang vai trò quản trị mô phỏng để dùng chức năng này.');
+ if(a==='navigate')navigate(id);else if(a==='close')close();else if(a==='help')help();else if(a==='new-content')contentDialog();else if(a==='edit-content')contentDialog(id);else if(a==='new-cat')categoryDialog();else if(a==='edit-cat')categoryDialog(id);else if(a==='detail')detail(id);
+ else if(a==='open-content'){navigate('issue');setTimeout(()=>{const f=$('#issue-form');if(f){f.elements.contentId.value=id;updatePreview()}},0)}
+ else if(a==='toggle-cat'){const c=s.categories.find(c=>c.id===id);showDialog(c.active?'Ngừng sử dụng CAT?':'Kích hoạt lại CAT?',`<p><strong>${h(c.code)} · ${h(c.name)}</strong></p><p>${c.active?'Nhóm sẽ không nhận nội dung hay lớp mới. Các lớp và mã đã có vẫn giữ nguyên.':'Nhóm sẽ xuất hiện lại trong lựa chọn đăng ký nội dung.'}</p>${modalForm('',c.active?'Xác nhận ngừng':'Kích hoạt')}`,async()=>{await transact(x=>setCategoryActive(x,id,!c.active));await refresh();close();toast('Đã cập nhật trạng thái CAT.')})}
+ else if(a==='simulation'){b.disabled=true;await simulate()}
+ else if(a==='copy'){try{await navigator.clipboard.writeText(id);toast('Đã sao chép mã.')}catch{toast('Không thể dùng clipboard. Bạn có thể chọn và sao chép mã hiển thị.')}}
+ else if(a==='cancel'){showDialog('Hủy lớp và giữ mã?',`<p>Lớp chuyển sang trạng thái hủy. Số đã cấp không được tái sử dụng.</p>${modalForm('','Xác nhận hủy')}`,async()=>{await transact(x=>cancelClass(x,id));await refresh();close();toast('Đã hủy lớp và giữ lại mã.')})}
+ else if(a==='go-registry'){close();navigate('registry')}
+ else if(a==='export-json')download('classcode-demo-backup.json',JSON.stringify(s,null,2),'application/json');
+ else if(a==='export-csv'){const rows=[['ID lớp','Namecode','Mã cũ','Tên nội dung','OWN','CAT','KKKK','HT','Năm','DDD','Ngày mở','Nhãn đợt','Trạng thái'],...s.classes.map(r=>{const c=s.contents.find(c=>c.id===r.contentId);return [r.id,r.code,r.aliases.join('; '),c.title,c.owner,categoryFor(s,c).code,pad(c.number,4),r.mode,r.year,pad(r.run,3),r.date,r.label,r.status]})];download('classcode-so-ma.csv','\uFEFF'+rows.map(r=>r.map(csvCell).join(',')).join('\r\n'),'text/csv;charset=utf-8');toast('Đã xuất sổ mã CSV.')}
+ else if(a==='reset'){showDialog('Đặt lại dữ liệu demo?',`<p>Xóa các thao tác đã thử trên trình duyệt này và khôi phục dữ liệu minh họa. Xuất JSON trước nếu cần giữ lại kết quả.</p>${modalForm('','Đặt lại demo')}`,async()=>{await reset();await refresh();close();toast('Đã khôi phục dữ liệu minh họa.')})}
+ else if(a==='rules')showDialog('Quy tắc namecode',`<div class="result-code">OWN_CAT_KKKK_HT_YYYY_DDD</div><div class="rules-list">${[['OWN','Đơn vị chịu trách nhiệm sở hữu nội dung.'],['CAT','Một cấp nhóm chủ đề từ danh mục quản trị.'],['KKKK','Số nội dung duy nhất toàn sổ, không đặt lại theo năm.'],['HT','OF trực tiếp · ON trực tuyến đồng bộ · EL tự học · BL kết hợp.'],['YYYY','Năm mở lớp. Lớp tự học liên tục không tự đổi mã khi sang năm.'],['DDD','Số đăng ký theo nội dung + năm, xuyên hình thức; bắt đầu 001.']].map(([k,v])=>`<div><code>${k}</code><p>${v}</p></div>`).join('')}</div><div class="modal-footer">${btn('Đã hiểu','close','primary')}</div>`);
+ }catch(err){toast(err.message)}finally{b.disabled=false}});
+document.addEventListener('submit',async e=>{if(!['issue-form','modal-form'].includes(e.target.id))return;e.preventDefault();const f=e.target,b=f.querySelector('[type=submit]'),error=f.id==='issue-form'?$('#issue-error'):$('#modal-error');b.disabled=true;error.textContent='';try{const v=Object.fromEntries(new FormData(f));if(f.id==='modal-form'){await modalAction(v)}else{const result=await transact(x=>{const matches=x.classes.filter(r=>r.contentId===v.contentId&&r.mode===v.mode&&r.date===v.date&&r.status==='active');if(matches.length&&!v.distinct&&!Object.hasOwn(x.requests,requestId))throw new Error('Có lớp cùng nội dung, hình thức và ngày. Kiểm tra và xác nhận lần mở khác trước khi cấp.');return issue(x,{...v,requestId})});lastIssue=result.record.id;requestId=uid();await refresh();detail(lastIssue);toast('Đã cấp mã và lưu lớp.')}}catch(err){error.textContent=err.message}finally{b.disabled=false}});
+document.addEventListener('input',e=>{if(e.target.id==='search'){search=e.target.value;$('#table-results').innerHTML=({contents:contentRows,cats:catRows,registry:registryRows}[view])()}if(e.target.closest('#issue-form')&&e.target.name!=='distinct'&&e.target.name!=='label')updatePreview()});
+document.addEventListener('change',e=>{if(e.target.id==='role'){role=e.target.value;render()}if(e.target.id==='owner-filter'){ownerFilter=e.target.value;$('#table-results').innerHTML=view==='registry'?registryRows():contentRows()}if(e.target.id==='mode-filter'){modeFilter=e.target.value;$('#table-results').innerHTML=registryRows()}if(e.target.id==='cat-filter'){categoryFilter=e.target.value;$('#table-results').innerHTML=catRows()}if(e.target.name==='categoryId')updateCatGuidance();if(e.target.closest('#issue-form')&&e.target.name!=='distinct')updatePreview()});
+window.addEventListener('hashchange',()=>{const next=location.hash.slice(1);view=['home','issue','contents','cats','registry'].includes(next)?next:'home';search='';ownerFilter='';modeFilter='';requestId=uid();render();window.scrollTo(0,0)});
+onUpdate(async()=>{s=await read();if(view==='issue'){toast('Sổ dữ liệu đã thay đổi ở tab khác. Mã sẽ được kiểm tra lại khi cấp.');updatePreview()}else render()});
+try{await transact(()=>null);s=await read();view=['home','issue','contents','cats','registry'].includes(location.hash.slice(1))?location.hash.slice(1):'home';render()}catch(err){$('#app').innerHTML=`<div class="startup-error"><h1>Chưa thể mở sổ dữ liệu</h1><p>Prototype cần trình duyệt cho phép IndexedDB. Thử cửa sổ thông thường hoặc cho phép lưu dữ liệu của website.</p><p>${h(err.message)}</p></div>`}
+</script></body></html>
